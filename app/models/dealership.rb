@@ -3,4 +3,7 @@ class Dealership < ApplicationRecord
 
     validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: VALID_EMAIL_REGEX }
     validates :name, :location, :description, presence: true
+
+    belongs_to :user
+    has_many :reviews, dependent: :destroy
 end

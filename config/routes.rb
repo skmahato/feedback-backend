@@ -9,5 +9,9 @@ Rails.application.routes.draw do
     post "/login",             to: "sessions#create"
     post "/signup",            to: "users#create"
     get "/current_user",       to: "users#authenticate_user"
+
+    resources :dealerships, only: [:index, :show, :create, :update, :destroy] do
+      resources :reviews, only: [:index, :create, :update, :destroy]
+    end
   end
 end

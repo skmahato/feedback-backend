@@ -11,6 +11,10 @@ class Api::ApiController < ActionController::API
     render_error(:unauthorized, ["Login required"]) unless current_user
   end
 
+  def admin_required
+    render_error(:unauthorized, ["Not Authorized"]) unless current_user.admin?
+  end
+
   def current_user
     @current_user ||= if auth_present?
                         User.find_by(id: auth.first["user"]) if auth.first["exp"] > Time.zone.now.to_i
