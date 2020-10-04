@@ -51,5 +51,3 @@ production:
   <<: *default
   database: feedback-backend_production
   adapter: postgresql
-  username: feedback-backend
-  password: <%= ENV['FEEDBACK-BACKEND_DATABASE_PASSWORD'] %>
