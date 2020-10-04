@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_10_04_183438) do
     t.text "description", null: false
     t.string "phone", default: ""
     t.string "email", default: ""
+    t.string "website", default: "", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

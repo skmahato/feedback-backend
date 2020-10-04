@@ -6,7 +6,7 @@ class CreateDealerships < ActiveRecord::Migration[5.2]
       t.text :description,   null: false
       t.string :phone,       default: ""
       t.string :email,       default: ""
-      t.string :website      null: false, default: ""
+      t.string :website,      null: false, default: ""
       t.references :user,    null: false, foreign_key: true
 
       t.timestamps
