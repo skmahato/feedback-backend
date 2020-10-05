@@ -12,7 +12,7 @@ class Api::ApiController < ActionController::API
   end
 
   def admin_required
-    render_error(:unauthorized, ["Not Authorized"]) unless current_user?.admin?
+    render_error(:unauthorized, ["Not Authorized"]) unless current_user&.admin?
   end
 
   def current_user
