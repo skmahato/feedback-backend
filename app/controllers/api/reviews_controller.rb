@@ -1,6 +1,6 @@
 class Api::ReviewsController < Api::ApiController
     skip_before_action :login_required, only: [:index, :create]
-    before_action :admin_required, except: [:update, :destroy]
+    before_action :admin_required, except: [:index, :update, :destroy]
 
     def index
         reviews = Dealership.find(params[:dealership_id])&.reviews
