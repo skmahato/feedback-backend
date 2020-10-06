@@ -12,6 +12,10 @@ Rails.application.routes.draw do
 
     resources :dealerships, only: [:index, :show, :create, :update, :destroy] do
       resources :reviews, only: [:index, :create, :update, :destroy]
+
+      member do
+        get 'generate_api'
+      end
     end
   end
 end

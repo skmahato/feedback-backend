@@ -3,4 +3,6 @@ class Review < ApplicationRecord
 
     belongs_to :user
     belongs_to :dealership
+
+    scope :only_visible, -> { where(visible: true) }
 end

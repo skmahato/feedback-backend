@@ -51,6 +51,12 @@ class Api::DealershipsController < Api::ApiController
           render_error(:unprocessable_entity, dealership.errors)
         end
     end
+
+    def generate_api
+      id = "#{current_user&.dealership&.id}-ghul1265d4c5c1qecec4cecw5"
+      api = "https://hacktoberfest-frontend.herokuapp.com/?token=#{id}"
+      render_success(:ok, api)
+    end
   
     private
   
