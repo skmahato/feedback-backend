@@ -54,7 +54,7 @@ class Api::DealershipsController < Api::ApiController
 
     def generate_api
       id = "#{current_user&.dealership&.id}-ghul1265d4c5c1qecec4cecw5"
-      api = "https://hacktoberfest-frontend.herokuapp.com/?token=#{id}"
+      api = "https://hacktoberfest-backend.herokuapp.com/?token=#{id}"
       render_success(:ok, api)
     end
   
